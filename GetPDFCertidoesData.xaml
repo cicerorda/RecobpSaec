@@ -187,7 +187,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Certidoes\&quot;+Data+&quot;\&quot;+Pedido.Trim+&quot; - &quot;+Data.Trim+&quot;.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[&quot;RelatorioFinanceiro\&quot;+FileName+&quot;.pdf&quot;]" />
+                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Certidoes\&quot;+Data+&quot;\&quot;+filename+&quot;.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[&quot;RelatorioFinanceiro\&quot;+FileName+&quot;.pdf&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
