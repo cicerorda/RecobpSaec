@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetVM" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="820,4633" sap2010:WorkflowViewState.IdRef="GetVM_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetVM" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="820,4930" sap2010:WorkflowViewState.IdRef="GetVM_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="68">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -73,20 +73,20 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetVM" sap:VirtualizedContainerService.HintSize="830,4568" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetVM" sap:VirtualizedContainerService.HintSize="830,4865" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_VisualMatric" />
       <Variable x:TypeArguments="x:String" Name="Data" />
+      <Variable x:TypeArguments="s:DateTime" Name="DataRedigida" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="788,208" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://registradores.onr.org.br/">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="788,207" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://registradores.onr.org.br/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -117,9 +117,9 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="788,4228" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="788,4526" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="752,4061" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="752,4361" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,13 +157,14 @@
               </ui:BrowserScope.Body>
             </ui:BrowserScope>
           </Sequence>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="710,2729" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="710,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="710,2808" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="676,2614" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="676,2694" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="Protocolo" />
                     <Variable x:TypeArguments="x:String" Name="Valor" />
@@ -181,7 +182,15 @@
                       <InArgument x:TypeArguments="x:String">[Row(2).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[Data &lt; DateAdd(&quot;d&quot;,-15, Now).ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="634,303" sap2010:WorkflowViewState.IdRef="If_3">
+                  <Assign sap:VirtualizedContainerService.HintSize="634,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:DateTime">[DataRedigida]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(Data,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[DataRedigida &lt; DateAdd(&quot;d&quot;,-16, Now)]" sap:VirtualizedContainerService.HintSize="634,300" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
@@ -218,18 +227,18 @@
                       <InArgument x:TypeArguments="x:String">[Row(5).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[Protocolo+&quot; / &quot;+Data+&quot; / &quot;+Valor]" />
-                  <If Condition="[Valor&lt;&gt;&quot;Valor Total&quot;]" sap:VirtualizedContainerService.HintSize="634,1746" sap2010:WorkflowViewState.IdRef="If_4">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[Protocolo+&quot; / &quot;+Data+&quot; / &quot;+Valor]" />
+                  <If Condition="[Valor&lt;&gt;&quot;Valor Total&quot;]" sap:VirtualizedContainerService.HintSize="634,1731" sap2010:WorkflowViewState.IdRef="If_4">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="598,1557" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence sap:VirtualizedContainerService.HintSize="598,1545" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,1465" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,1453" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Try>
-                            <Sequence sap:VirtualizedContainerService.HintSize="518,1233" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <Sequence sap:VirtualizedContainerService.HintSize="518,1226" sap2010:WorkflowViewState.IdRef="Sequence_14">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,7 +263,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="476,849" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <Sequence DisplayName="MoveFile" sap:VirtualizedContainerService.HintSize="476,842" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="si:FileInfo" Name="ArquivoSaec" />
                                 </Sequence.Variables>
@@ -263,7 +272,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="C:\Users\andrade_cicero\Downloads" File="[ArquivoSaec]" sap:VirtualizedContainerService.HintSize="434,457" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+                                <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="C:\Users\andrade_cicero\Downloads" File="[ArquivoSaec]" sap:VirtualizedContainerService.HintSize="434,453" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
                                   <ui:GetLastDownloadedFile.Body>
                                     <ActivityAction>
                                       <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_15">
@@ -298,7 +307,7 @@
                                     </ActivityAction>
                                   </ui:GetLastDownloadedFile.Body>
                                 </ui:GetLastDownloadedFile>
-                                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[ArquivoSaec.FullName]" />
+                                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[ArquivoSaec.FullName]" />
                                 <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="si:FileInfo">[ArquivoSaec]</OutArgument>
@@ -333,7 +342,7 @@
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="522,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                            <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="522,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -365,8 +374,8 @@
             </ui:ForEachRow.Body>
           </ui:ForEachRow>
           <ui:AppendRange DataTable="[dt_VisualMatric]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="710,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Pedidos" WorkbookPath="[&quot;Pedidos de Visualização de Matrícula &quot;+Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;.xlsx&quot;]" />
-          <ui:ClearDataTable DataTable="[dt_VisualMatric]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="710,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-          <If Condition="[Data &lt; DateAdd(&quot;d&quot;,-15, Now).ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="710,303" sap2010:WorkflowViewState.IdRef="If_2">
+          <ui:ClearDataTable DataTable="[dt_VisualMatric]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="710,79" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+          <If Condition="[DataRedigida &lt; DateAdd(&quot;d&quot;,-16, Now)]" sap:VirtualizedContainerService.HintSize="710,300" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
@@ -412,7 +421,7 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
       <ui:InterruptibleDoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Data &lt; DateAdd(&quot;d&quot;,-15, Now).ToString(&quot;dd/MM/yyyy&quot;)" />
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="DataRedigida &gt;= DateAdd(&quot;d&quot;,-16, Now)" />
       </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
   </Sequence>

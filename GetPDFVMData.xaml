@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetPDFData" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1105,2279" sap2010:WorkflowViewState.IdRef="GetPDFData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetPDFData" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1105,2261" sap2010:WorkflowViewState.IdRef="GetPDFData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
@@ -38,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -73,9 +73,10 @@
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetPDFData" sap:VirtualizedContainerService.HintSize="1115,2214" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetPDFData" sap:VirtualizedContainerService.HintSize="1115,2196" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Pedido" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_DadosVM" />
@@ -86,7 +87,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro" sap:VirtualizedContainerService.HintSize="1073,2122" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="SizeLargestFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro" sap:VirtualizedContainerService.HintSize="1073,2104" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="SizeLargestFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -95,7 +96,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1039,1867" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1039,1855" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Certidoes" />
               <Variable x:TypeArguments="x:String" Name="DadosCertidoes" />
@@ -140,31 +141,31 @@
                 <InArgument x:TypeArguments="x:String">[Right(DadosCertidoes.Split("("c)(0), 10)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="997,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Data+&quot; / &quot;+Valor+&quot; / &quot;+Pedido]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="997,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Data+&quot; / &quot;+Valor+&quot; / &quot;+Pedido]" />
             <ui:BuildDataTable DataTable="[dt_DadosVM]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="997,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Data&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Pedido&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Valor&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Data, Valor, Pedido}]" DataTable="[dt_DadosVM]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="997,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-            <ui:AppendRange DataTable="[dt_DadosVM]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="997,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Visualização de Matrícula" WorkbookPath="[&quot;DadosParaFinanceiro &quot;+Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;.xlsx&quot;]" />
-            <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[Day]" sap:VirtualizedContainerService.HintSize="997,90" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[&quot;C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" PathType="Folder" />
-            <If Condition="[Day=True]" sap:VirtualizedContainerService.HintSize="997,531" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Data, Valor, Pedido}]" DataTable="[dt_DadosVM]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="997,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <ui:AppendRange DataTable="[dt_DadosVM]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="997,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Visualização de Matrícula" WorkbookPath="[&quot;RelatorioFinanceiro\DadosParaFinanceiro &quot;+now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;.xlsx&quot;]" />
+            <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[Day]" sap:VirtualizedContainerService.HintSize="997,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" PathType="Folder" />
+            <If Condition="[Day=True]" sap:VirtualizedContainerService.HintSize="997,525" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,252" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,249" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[File.FullName]" />
+                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[File.FullName]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,372" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,368" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" />
-                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\OneDrive - Sicredi\Documents\UiPath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[File.FullName]" />
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" />
+                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\andrade_cicero\Documents\Uipath\RecobpSaec\RelatorioFinanceiro\Visualização Matriculas\&quot;+Data]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[File.FullName]" />
                 </Sequence>
               </If.Else>
             </If>
