@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetVM" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="938.4,5636" sap2010:WorkflowViewState.IdRef="GetVM_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetVM" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="938.4,5592" sap2010:WorkflowViewState.IdRef="GetVM_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
@@ -76,7 +76,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetVM" sap:VirtualizedContainerService.HintSize="948.8,5571.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetVM" sap:VirtualizedContainerService.HintSize="948.8,5527.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_VisualMatric" />
       <Variable x:TypeArguments="x:String" Name="Data" />
@@ -118,9 +118,9 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[DataRedigida &gt;= DateAdd(&quot;d&quot;,-1000, Now)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="886.4,5179.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[DataRedigida &gt;= DateAdd(&quot;d&quot;,-1000, Now)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="886.4,5135.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="851.2,5002.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="851.2,4918.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,13 +159,13 @@
             </ui:BrowserScope>
           </Sequence>
           <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="788.8,197.6" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="788.8,3204" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_VisualMatric]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="788.8,3107.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="755.2,3078.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="755.2,2981.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="Protocolo" />
                     <Variable x:TypeArguments="x:String" Name="Valor" />
@@ -183,15 +183,7 @@
                       <InArgument x:TypeArguments="x:String">[Row(2).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="692.8,69.6" sap2010:WorkflowViewState.IdRef="Assign_5">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="s:DateTime">[DataRedigida]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(Data,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <If sap2010:Annotation.AnnotationText="alterar para: DataRedigida &lt; DateAdd(&quot;m&quot;,-2, Now)" Condition="[DataRedigida &lt; DateAdd(&quot;d&quot;,-34, Now)]" sap:VirtualizedContainerService.HintSize="692.8,384.8" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If sap2010:Annotation.AnnotationText="ALTERAR: data.Split(&quot;/&quot;c)(1)+&quot;/&quot;+data.Split(&quot;/&quot;c)(2)=DateAdd(&quot;m&quot;,-2, Now).ToString(&quot;MM/yyyy&quot;)" Condition="[data &lt; DateAdd(&quot;d&quot;,-34, Now).ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="692.8,397.6" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -381,7 +373,7 @@
           </ui:ForEachRow>
           <ui:AppendRange DataTable="[dt_VisualMatric]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="788.8,125.6" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Pedidos" WorkbookPath="[&quot;Pedidos de Visualização de Matrícula &quot;+Now.ToString(&quot;dd-MM-yyyy&quot;)+&quot;.xlsx&quot;]" />
           <ui:ClearDataTable DataTable="[dt_VisualMatric]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="788.8,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-          <If sap2010:Annotation.AnnotationText="alterar para: DataRedigida &lt; DateAdd(&quot;m&quot;,-2, Now)" Condition="[DataRedigida &lt; DateAdd(&quot;d&quot;,-34, Now)]" sap:VirtualizedContainerService.HintSize="788.8,384.8" sap2010:WorkflowViewState.IdRef="If_2">
+          <If sap2010:Annotation.AnnotationText="ALTERAR: data.Split(&quot;/&quot;c)(1)+&quot;/&quot;+data.Split(&quot;/&quot;c)(2)=DateAdd(&quot;m&quot;,-2, Now).ToString(&quot;MM/yyyy&quot;)" Condition="[data &lt; DateAdd(&quot;d&quot;,-34, Now).ToString(&quot;dd/MM/yyyy&quot;)]" sap:VirtualizedContainerService.HintSize="788.8,397.6" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
